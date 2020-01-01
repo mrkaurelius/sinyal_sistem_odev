@@ -1,12 +1,12 @@
 %% giris
 % fundamental frequency: pitch
-% pitch müzikte perde, perde ayarlamak anlamýnda
+% pitch mï¿½zikte perde, perde ayarlamak anlamï¿½nda
 % decresing function: smoothing 
 % strong to weak, weak to strong 
 
 % piano key freqs: https://en.wikipedia.org/wiki/Piano_key_frequencies
 %% implementasyon
-% tum key numberlari freakanslarý ile tanýmlayabilirim
+% tum key numberlari freakanslarï¿½ ile tanï¿½mlayabilirim
 
 %key_108_freq = 7902.133;
 
@@ -37,7 +37,7 @@
 %sound(y,fs); 
 %p = audioplayer(y,fs); % more flexible function 
 
-%% kendi yaptýgým notalarý manul olarak girebilirim 
+%% kendi yaptï¿½gï¿½m notalarï¿½ manul olarak girebilirim 
 % daha gorununur bir alanda sampling al 
 %{
 fs = 1000;
@@ -62,17 +62,16 @@ figure(2);
 plot(abs(c));
 sound(rand(100000,1),20000) % linkinpark
 %}
-%% internetten buldugum
-% nota olmayan yerlerde calma 
-% bosluklarýn uzunluklarýný implement et
-% sesin azalýp artmasýný implement et 
-
+%% son
 
 notecreate = @(frq,dur) sin(2*pi* [1:dur]/8192 * (440*2.^((frq-1)/12)));
 
 notename = {'A' 'A#' 'B' 'C' 'C#' 'D' 'D#' 'E' 'F' 'F#' 'G' 'G#' ' '};
 song = {'A' 'A' 'E' 'E' 'F#' 'F#' 'E' 'E' 'D' 'D' 'C#' 'C#' 'B' 'B' 'A' 'A'};
-%song = { 'G' 'G' 'G' 'D' 'E' 'D' 'C' ' ' };
+%song = { 'G' 'G' ' ' 'A' 'B' 'A' 'G' 'B' 'A' 'A' 'G' 'G' 'G' 'G' 'G' 'A' 'B' ' ' 'A' 'G' 'B' 'A' ' '  'A' 'G'};
+%song = { 'G' 'A' 'G' 'E' 'G' 'A' 'G' 'E' 'D' 'D' 'B' 'B' 'C#' 'C' 'G'  'A' 'A' 'C' 'B' 'A' 'G' 'A' 'G' 'E' 'A' 'A' 'C' 'B' 'A' 'G' 'A' 'G' 'E' 'A' 'A' 'C' 'B' 'A' 'G' 'A' 'G' 'E' 'D' 'D' 'F' 'D' 'F' 'D' 'B' 'C' 'E' 'C' 'G' 'E' 'G' 'F' 'D' 'C' };
+
+
 for k1 = 1:length(song)
     idx = strcmp(song(k1), notename);
     songidx(k1) = find(idx);
